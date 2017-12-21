@@ -1,4 +1,4 @@
-# Created by: Mr. Coxall
+# Created by: Gavin Zhou
 # Created on: Sep 2016
 # Created for: ICS3U
 # This scene shows the main menu.
@@ -13,7 +13,7 @@ class MainMenuScene(Scene):
         
         # add background color
         self.background = SpriteNode(position = self.size / 2, 
-                                     color = 'white', 
+                                     color = '#77a0ee', 
                                      parent = self, 
                                      size = self.size)
     
