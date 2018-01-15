@@ -1,5 +1,5 @@
-# Created by: Mr. Coxall
-# Created on: Sep 2016
+# Created by: Scarlett Gao
+# Created on: Jan 2018
 # Created for: ICS3U
 # This scene shows the main menu.
 
@@ -11,12 +11,24 @@ class MainMenuScene(Scene):
     def setup(self):
         # this method is called, when user moves to this scene
         
-        # add background color
-        self.background = SpriteNode(position = self.size / 2, 
-                                     color = 'white', 
-                                     parent = self, 
+        # add background
+        self.background = SpriteNode('./assets/sprites/IMG_1521.JPG',
+        	                           parent = self,
+        	                           position = self.size / 2, 
                                      size = self.size)
+                                     
+        self.start_button = SpriteNode('./assets/sprites/start.png',
+                                       parent = self,
+                                       position = self.size/2,
+                                       scale = 0.75)
     
+        help_button_position = self.size/2
+        help_button_position.y = help_button_position.y - 200
+        self.help_button = SpriteNode('./assets/sprites/help.png',
+                                       parent = self,
+                                       position = help_button_position,
+                                       scale = 0.75)
+                                       
     def update(self):
         # this method is called, hopefully, 60 times a second
         pass
@@ -32,6 +44,14 @@ class MainMenuScene(Scene):
     def touch_ended(self, touch):
         # this method is called, when user releases a finger from the screen
         pass
+        
+        # if start button is pressed, goto game scene
+        if self.start_button.frame.contains_point(touch.location):
+            self.level_select_scene(GameScene())
+            
+        # if start button is pressed, goto game scene
+        if self.help_button.frame.contains_point(touch.location):
+            self.help_scene(HelpScene())
     
     def did_change_size(self):
         # this method is called, when user changes the orientation of the screen
