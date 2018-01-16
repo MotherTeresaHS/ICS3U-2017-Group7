@@ -19,17 +19,20 @@ class main_game_scene_one(Scene):
                                      
         pause_button = self.size/2
         pause_button.x = pause_button.x + 0
-        self.pause_button = SpriteNode('./assets/sprites/pause_button.PNG',
+        self.pause_button = SpriteNode('./assets/sprites/back_button.png',
                                               parent = self,
                                               position = self.size/2,
-                                              scale = 2)
+                                              scale = 0.5)
+                                              
     def update(self):
         # this method is called, hopefully, 60 times a second
         pass
         
     def touch_began(self, touch):
         # this method is called, when user touches the screen
-        pass
+        fish_form_one = self.size/2
+        fish_form_one.x = fish_form_one.x+0
+        #self.fish_form_one = SpriteNode('./assets/sprites/fish_form_one.PNG')
     
     def touch_moved(self, touch):
         # this method is called, when user moves a finger around on the screen
